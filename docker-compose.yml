@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  api:
+    image: ghcr.io/nperez0111/iframely-docker:main
+    container_name: iframely
+    restart: unless-stopped
+    environment:
+      NODE_ENV: local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8061:8061
